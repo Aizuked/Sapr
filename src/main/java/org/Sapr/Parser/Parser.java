@@ -50,7 +50,8 @@ public class Parser {
                         prevBuf[0] = "constant";
                     } else {
                         if (prevBuf[0].equals("dataType")) addVariable(prevBuf[1], podString);
-                        if (!prevBuf[0].equals("dataType") && !prevBuf[0].equals("delimiter"))
+                        if (!prevBuf[0].equals("dataType") && !prevBuf[0].equals("delimiter")
+                                && !(prevBuf[0].equals("operation") && isInVariables(podString)))
                             addLexem(LexemTypes.ParsingError, podString);
                     }
                 }

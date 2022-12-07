@@ -39,10 +39,9 @@ lexem type:Identifier;lexem id:3;value:for
 lexem type:Delimiter;lexem id:2;value:(
 lexem type:DataType;lexem id:0;value:32-bit integer
 lexem type:Operation;lexem id:0;value:assign_operation
-lexem type:ParsingError;lexem id:-1;value:1;
-lexem type:ParsingError;lexem id:-1;value:j
+lexem type:Constant;lexem id:0;value:1
+lexem type:Delimiter;lexem id:0;value:;
 lexem type:Operation;lexem id:9;value:less_operation
-lexem type:ParsingError;lexem id:-1;value:k
 lexem type:Delimiter;lexem id:0;value:;
 lexem type:Operation;lexem id:10;value:increment_operation
 lexem type:Delimiter;lexem id:3;value:)
