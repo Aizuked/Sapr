@@ -1,10 +1,8 @@
-package org.Sapr.Lab1.Consts;
+package org.Sapr.Consts;
 
-//.ordinal()
 public enum LexemTypes {
     DataType,
-    Variable,
-    Delimeter,
+    Delimiter,
     Identifier,
     Constant,
     Operation,

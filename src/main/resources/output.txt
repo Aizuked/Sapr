@@ -1,0 +1,61 @@
+lexem type:Identifier;lexem id:1;value:public
+lexem type:Identifier;lexem id:0;value:class
+lexem type:ParsingError;lexem id:-1;value:Main
+lexem type:Delimiter;lexem id:6;value:{
+lexem type:Identifier;lexem id:1;value:public
+lexem type:Identifier;lexem id:11;value:static
+lexem type:Identifier;lexem id:12;value:void
+lexem type:ParsingError;lexem id:-1;value:main
+lexem type:Delimiter;lexem id:2;value:(
+lexem type:DataType;lexem id:2;value:string of chars
+lexem type:Delimiter;lexem id:4;value:[
+lexem type:Delimiter;lexem id:5;value:]
+lexem type:Delimiter;lexem id:3;value:)
+lexem type:Delimiter;lexem id:6;value:{
+lexem type:DataType;lexem id:0;value:32-bit integer
+lexem type:Operation;lexem id:0;value:assign_operation
+lexem type:Constant;lexem id:0;value:3
+lexem type:Delimiter;lexem id:0;value:;
+lexem type:DataType;lexem id:4;value:32-bit floating point value
+lexem type:Operation;lexem id:0;value:assign_operation
+lexem type:Constant;lexem id:0;value:0
+lexem type:Delimiter;lexem id:0;value:;
+lexem type:Identifier;lexem id:3;value:for
+lexem type:Delimiter;lexem id:2;value:(
+lexem type:DataType;lexem id:0;value:32-bit integer
+lexem type:Operation;lexem id:0;value:assign_operation
+lexem type:Constant;lexem id:0;value:0
+lexem type:Delimiter;lexem id:0;value:;
+lexem type:Operation;lexem id:9;value:less_operation
+lexem type:Constant;lexem id:0;value:10
+lexem type:Delimiter;lexem id:0;value:;
+lexem type:Operation;lexem id:10;value:increment_operation
+lexem type:Delimiter;lexem id:3;value:)
+lexem type:Delimiter;lexem id:6;value:{
+lexem type:Delimiter;lexem id:2;value:(
+lexem type:Delimiter;lexem id:3;value:)
+lexem type:Delimiter;lexem id:0;value:;
+lexem type:Identifier;lexem id:3;value:for
+lexem type:Delimiter;lexem id:2;value:(
+lexem type:DataType;lexem id:0;value:32-bit integer
+lexem type:Operation;lexem id:0;value:assign_operation
+lexem type:ParsingError;lexem id:-1;value:1;
+lexem type:ParsingError;lexem id:-1;value:j
+lexem type:Operation;lexem id:9;value:less_operation
+lexem type:ParsingError;lexem id:-1;value:k
+lexem type:Delimiter;lexem id:0;value:;
+lexem type:Operation;lexem id:10;value:increment_operation
+lexem type:Delimiter;lexem id:3;value:)
+lexem type:Delimiter;lexem id:6;value:{
+lexem type:Operation;lexem id:5;value:add_amount_operation
+lexem type:Constant;lexem id:0;value:0.333
+lexem type:Delimiter;lexem id:0;value:;
+lexem type:Delimiter;lexem id:7;value:}
+lexem type:Delimiter;lexem id:7;value:}
+lexem type:Delimiter;lexem id:7;value:}
+lexem type:Delimiter;lexem id:7;value:}
+
+<0>variable of type<int>with name:k
+<1>variable of type<float>with name:result
+<2>variable of type<int>with name:i
+<3>variable of type<int>with name:j

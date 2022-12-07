@@ -1,4 +1,4 @@
-package org.Sapr.Lab1.Consts;
+package org.Sapr.Consts;
 
 import com.google.common.collect.ImmutableTable;
 import com.google.common.collect.Table;
@@ -8,7 +8,7 @@ import java.util.List;
 
 public class LexemConstants {
 
-    Table<String, Integer, String> types = ImmutableTable.<String, Integer, String>builder()
+    public static final Table<String, Integer, String> types = ImmutableTable.<String, Integer, String> builder()
             .put("int", 0, "32-bit integer")
             .put("long", 1, "64-bit integer")
             .put("String", 2, "string of chars")
@@ -17,7 +17,7 @@ public class LexemConstants {
             .put("double", 5, "64-bit floating point value")
             .build();
 
-    Table<String, Integer, String> operators = ImmutableTable.<String, Integer, String>builder()
+    public static final Table<String, Integer, String> operators = ImmutableTable.<String, Integer, String> builder()
             .put("=", 0, "assign_operation")
             .put("+", 1, "sum_operation")
             .put("-", 2, "subtract_operation")
@@ -33,9 +33,10 @@ public class LexemConstants {
             .put("%", 12, "modulo_operation")
             .build();
 
-    ArrayList<String> keyWords = new ArrayList<>(List.of("class", "public",
-            "private", "for", "return", "if", "else", "while", "do", "switch", "case"));
+    public static final ArrayList<String> identifiers = new ArrayList<>(List.of("class", "public",
+            "private", "for", "return", "if", "else", "while", "do", "switch", "case", "static", "void", "package"));
 
-    ArrayList<String> keySymbols = new ArrayList<>(List.of(".", ";", ",", "(", ")", "[", "]", "{", "}"));
+    public static final ArrayList<String> delimiters = new ArrayList<>
+            (List.of(";", ",", "(", ")", "[", "]", "{", "}"));
 
 }
