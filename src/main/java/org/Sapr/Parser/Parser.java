@@ -28,9 +28,11 @@ public class Parser {
     }
 
     public void parse() throws IOException {
+        int currentIterOverCurrLine = 0;
         String currentLine;
         while ((currentLine = reader.readLine()) != null) {
             for (String podString : currentLine.split(" ")) {
+                currentIterOverCurrLine++;
                 if (!podString.isBlank()) {
                     if (look.isType(podString)) {
                         addLexem(LexemTypes.DataType, podString);
@@ -50,12 +52,16 @@ public class Parser {
                         prevBuf[0] = "constant";
                     } else {
                         if (prevBuf[0].equals("dataType")) addVariable(prevBuf[1], podString);
-                        if (!prevBuf[0].equals("dataType") && !prevBuf[0].equals("delimiter")
-                                && !(prevBuf[0].equals("operation") && isInVariables(podString)))
+                        if (prevBuf[0].equals("delimiter")
+                                || (prevBuf[0].equals("operation") && isInVariables(podString))
+                                || (currentIterOverCurrLine == 0 && isInVariables(podString)))
+                            addLexem(LexemTypes.Variable, podString);
+                        else if (!prevBuf[0].equals("dataType"))
                             addLexem(LexemTypes.ParsingError, podString);
                     }
                 }
             }
+            currentIterOverCurrLine = 0;
         }
 
         reader.close();

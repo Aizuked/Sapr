@@ -6,5 +6,6 @@ public enum LexemTypes {
     Identifier,
     Constant,
     Operation,
+    Variable,
     ParsingError
 }
