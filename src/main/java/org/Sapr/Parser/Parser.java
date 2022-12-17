@@ -19,6 +19,14 @@ public class Parser {
     private int currentVariableId = 0;
     private String[] prevBuf = new String[2];
 
+    public ArrayList<Lexem> getLexems() {
+        return lexems;
+    }
+
+    public ArrayList<Variable> getVariables() {
+        return variables;
+    }
+
     public Parser(String fileName) throws FileNotFoundException {
         initializeBufferedReader(fileName);
     }
@@ -47,14 +55,16 @@ public class Parser {
                     } else if (look.isDelimiter(podString)) {
                         addLexem(LexemTypes.Delimiter, podString);
                         prevBuf[0] = "delimiter";
-                    } else if (isNumeric(podString)) {
+                    } else if (isNumeric(podString) || podString.equalsIgnoreCase("true") || podString.equalsIgnoreCase("false")) {
                         addLexem(LexemTypes.Constant, podString);
                         prevBuf[0] = "constant";
                     } else {
-                        if (prevBuf[0].equals("dataType")) addVariable(prevBuf[1], podString);
-                        if (prevBuf[0].equals("delimiter")
-                                || (prevBuf[0].equals("operation") && isInVariables(podString))
-                                || (currentIterOverCurrLine == 0 && isInVariables(podString)))
+                        if (prevBuf[0].equals("dataType") || isInVariables(podString)) {
+                            addVariable(prevBuf[1], podString);
+                            addLexem(LexemTypes.Variable, podString);
+                        }
+                        if (isInVariables(podString) && (prevBuf[0].equals("delimiter") ||
+                                prevBuf[0].equals("operation") || currentIterOverCurrLine == 0))
                             addLexem(LexemTypes.Variable, podString);
                         else if (!prevBuf[0].equals("dataType"))
                             addLexem(LexemTypes.ParsingError, podString);
@@ -75,27 +85,29 @@ public class Parser {
         switch (lexemType) {
             case DataType:
                 result = look.findType(input);
-            break;
+                break;
 
             case Delimiter:
                 result = look.findDelimiter(input);
-            break;
+                break;
 
             case Identifier:
                 result = look.findIdentifier(input);
-            break;
+                break;
 
-            case Constant:
+            case Constant, Variable:
                 result = Map.of(0, input);
-            break;
+                break;
 
             case Operation:
                 result = look.findOperation(input);
-            break;
+                break;
 
             default:
-                result = Map.of(-1, input);
-            break;
+                if (!(input.equals("true") || input.equals("True") || input.equals("false") || input.equals("False")))
+                    result = Map.of(-1, input);
+                else result = Map.of(3, input);
+                break;
         }
 
         lexemId = result.keySet().stream().findFirst().get();

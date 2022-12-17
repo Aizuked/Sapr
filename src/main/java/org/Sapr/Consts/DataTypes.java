@@ -4,7 +4,7 @@ public enum DataTypes {
     INT("int"),
     LONG("long"),
     STRING("String"),
-    BOOL("bool"),
+    BOOL("boolean"),
     FLOAT("float"),
     DOUBLE("double");
 

@@ -12,7 +12,7 @@ public class LexemConstants {
             .put("int", 0, "32-bit integer")
             .put("long", 1, "64-bit integer")
             .put("String", 2, "string of chars")
-            .put("bool", 3, "boolean value")
+            .put("boolean", 3, "boolean value")
             .put("float", 4, "32-bit floating point value")
             .put("double", 5, "64-bit floating point value")
             .build();

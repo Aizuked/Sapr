@@ -1,0 +1,210 @@
+Identifier Node:
+public
+Identifier Node:
+class
+ParsingError Node:
+Main
+Delimiter Node:
+{
+|
+----------------
+				|
+
+				Identifier Node:
+				public
+				Identifier Node:
+				static
+				Identifier Node:
+				void
+				ParsingError Node:
+				main
+				Delimiter Node:
+				(
+				DataType Node:
+				string of chars
+				Delimiter Node:
+				[
+				Delimiter Node:
+				]
+				ParsingError Node:
+				args
+				Delimiter Node:
+				)
+				Delimiter Node:
+				{
+				|
+				----------------
+								|
+
+								DataType Node:
+								32-bit integer
+								Variable Node:
+								k
+								Operation Node:
+								assign_operation
+								Constant Node:
+								3
+								Delimiter Node:
+								;
+								|
+								----------------
+												|
+
+												DataType Node:
+												32-bit floating point value
+												Variable Node:
+												result
+												Operation Node:
+												assign_operation
+												Constant Node:
+												0.33
+												Delimiter Node:
+												;
+												|
+												----------------
+																|
+
+																DataType Node:
+																boolean value
+																Variable Node:
+																inda
+																Operation Node:
+																assign_operation
+																Constant Node:
+																true
+																Delimiter Node:
+																;
+																|
+																----------------
+																				|
+
+																				Identifier Node:
+																				for
+																				Delimiter Node:
+																				(
+																				DataType Node:
+																				32-bit integer
+																				Variable Node:
+																				i
+																				Operation Node:
+																				assign_operation
+																				Constant Node:
+																				0
+																				Delimiter Node:
+																				;
+																				|
+																				----------------
+																								|
+
+																								Variable Node:
+																								i
+																								Variable Node:
+																								i
+																								Operation Node:
+																								less_operation
+																								Constant Node:
+																								10
+																								Delimiter Node:
+																								;
+																								|
+																								----------------
+																												|
+
+																												Variable Node:
+																												i
+																												Variable Node:
+																												i
+																												Operation Node:
+																												increment_operation
+																												Delimiter Node:
+																												)
+																												Delimiter Node:
+																												{
+																												|
+																												----------------
+																																|
+
+																																Identifier Node:
+																																for
+																																Delimiter Node:
+																																(
+																																DataType Node:
+																																32-bit integer
+																																Variable Node:
+																																j
+																																Operation Node:
+																																assign_operation
+																																Constant Node:
+																																1
+																																Delimiter Node:
+																																;
+																																|
+																																----------------
+																																				|
+
+																																				Variable Node:
+																																				j
+																																				Variable Node:
+																																				j
+																																				Operation Node:
+																																				less_operation
+																																				Constant Node:
+																																				15
+																																				Delimiter Node:
+																																				;
+																																				|
+																																				----------------
+																																								|
+
+																																								Variable Node:
+																																								j
+																																								Variable Node:
+																																								j
+																																								Operation Node:
+																																								increment_operation
+																																								Delimiter Node:
+																																								)
+																																								Delimiter Node:
+																																								{
+																																								|
+																																								----------------
+																																												|
+
+																																												Variable Node:
+																																												result
+																																												Variable Node:
+																																												result
+																																												Operation Node:
+																																												add_amount_operation
+																																												Constant Node:
+																																												0.33
+																																												Delimiter Node:
+																																												;
+																																												|
+																																												----------------
+																																																|
+
+																																																Delimiter Node:
+																																																}
+																																																|
+																																																----------------
+																																																				|
+
+																																																				Delimiter Node:
+																																																				}
+																																																				|
+																																																				----------------
+																																																								|
+
+																																																								Delimiter Node:
+																																																								}
+																																																								|
+																																																								----------------
+																																																												|
+
+																																																												Delimiter Node:
+																																																												}
+																																																												|
+																																																												----------------
+																																																																|
+

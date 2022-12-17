@@ -36,4 +36,12 @@ public class LookUpService {
     public boolean isDelimiter(String input) {
         return LexemConstants.delimiters.contains(input);
     }
+
+    public String findTypeByValue(int id) {
+        return String.valueOf(LexemConstants.types.column(id).keySet().stream().findFirst());
+    }
+
+    public String findOperationByValue(int id) {
+        return String.valueOf(LexemConstants.operators.column(id).keySet().stream().findFirst());
+    }
 }
