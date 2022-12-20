@@ -1,7 +1,5 @@
 package org.Sapr.ExceptionsChecker;
 
-import com.google.common.collect.Table;
-import org.Sapr.Consts.LexemConstants;
 import org.Sapr.Consts.LexemTypes;
 import org.Sapr.Models.Lexem;
 import org.Sapr.Models.Node;
@@ -14,7 +12,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class ExceptionsChecker {
     private ArrayList<Node> nodes = new ArrayList<>();
     private ArrayList<Variable> variables = new ArrayList<>();
-    private LookUpService look = new LookUpService();
+    private final LookUpService look = new LookUpService();
     private int currentLine;
     private boolean exceptionRaised = false;
 
@@ -89,8 +87,6 @@ public class ExceptionsChecker {
                 leftRightVerifier(tempLexem1, tempLexem2, currentLine);
             } else if (operationFlag) {
                 leftRightVerifier(tempLexem1, tempLexem2, currentLine);
-            } else if (ppMM) {
-
             }
 
             if (forFlag != 0)
@@ -100,54 +96,47 @@ public class ExceptionsChecker {
 
     private void declarationVerifier(Lexem lexemT, Lexem lexemV, int currentLine) {
         try {
-            //look.findTypeByValue(lexemT.lexemId()).split("\\[")[1].replaceFirst("]", "")
             switch (getTypeByDeclaredName(lexemT.lexemValue())) {
-                case "int": {
+                case "int" -> {
                     try {
                         Integer.parseInt(lexemV.lexemValue());
                     } catch (Exception e) {
                         System.out.println("Illegal type eq declaration on line: " + currentLine);
                     }
-                } break;
-
-                case "long": {
+                }
+                case "long" -> {
                     try {
                         Long.parseLong(lexemV.lexemValue());
                     } catch (Exception e) {
                         System.out.println("Illegal type eq declaration on line: " + currentLine);
                     }
-                } break;
-
-                case "String": {
+                }
+                case "String" -> {
                     if (lexemV.lexemValue().split("\"").length < 2) {
                         System.out.println("Illegal type eq declaration on line: " + currentLine);
                     }
-                } break;
-
-                case "boolean": {
+                }
+                case "boolean" -> {
                     if (!(lexemV.lexemValue().equals("true") || lexemV.lexemValue().equals("True")
                             || lexemV.lexemValue().equals("false") || lexemV.lexemValue().equals("False")))
                         System.out.println("Illegal type eq declaration on line: " + currentLine);
-                } break;
-
-                case "float": {
+                }
+                case "float" -> {
                     try {
                         Float.parseFloat(lexemV.lexemValue());
                     } catch (Exception e) {
                         System.out.println("Illegal type eq declaration on line: " + currentLine);
                     }
-                } break;
-
-                case "double": {
+                }
+                case "double" -> {
                     try {
                         Double.parseDouble(lexemV.lexemValue());
                     } catch (Exception e) {
                         System.out.println("Illegal type eq declaration on line: " + currentLine);
                     }
-                } break;
-
+                }
             }
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
 
     }
@@ -160,55 +149,44 @@ public class ExceptionsChecker {
                         System.out.println("Illegal operation on line: " + currentLine);
                 } else {
                     switch (getTypeByDeclaredName(lexemL.lexemValue())) {
-                        case "int": {
+                        case "int" -> {
                             try {
                                 Integer.parseInt(lexemR.lexemValue());
                             } catch (Exception e) {
                                 System.out.println("Illegal operation on line: " + currentLine);
                             }
                         }
-                        break;
-
-                        case "long": {
+                        case "long" -> {
                             try {
                                 Long.parseLong(lexemR.lexemValue());
                             } catch (Exception e) {
                                 System.out.println("Illegal operation on line: " + currentLine);
                             }
                         }
-                        break;
-
-                        case "String": {
+                        case "String" -> {
                             if (lexemR.lexemValue().split("\"").length < 2) {
                                 System.out.println("Illegal operation on line: " + currentLine);
                             }
                         }
-                        break;
-
-                        case "boolean": {
+                        case "boolean" -> {
                             if (!(lexemR.lexemValue().equals("true") || lexemR.lexemValue().equals("True")
                                     || lexemR.lexemValue().equals("false") || lexemR.lexemValue().equals("False")))
                                 System.out.println("Illegal operation on line: " + currentLine);
                         }
-                        break;
-
-                        case "float": {
+                        case "float" -> {
                             try {
                                 Float.parseFloat(lexemR.lexemValue());
                             } catch (Exception e) {
                                 System.out.println("Illegal operation on line: " + currentLine);
                             }
                         }
-                        break;
-
-                        case "double": {
+                        case "double" -> {
                             try {
                                 Double.parseDouble(lexemR.lexemValue());
                             } catch (Exception e) {
                                 System.out.println("Illegal operation on line: " + currentLine);
                             }
                         }
-                        break;
                     }
                 }
             }

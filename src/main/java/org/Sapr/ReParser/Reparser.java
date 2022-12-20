@@ -5,7 +5,6 @@ import org.Sapr.Models.Node;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Reparser {
@@ -14,7 +13,7 @@ public class Reparser {
     private int tabCount = 0;
     private ArrayList<Node> nodes = new ArrayList<>();
 
-    public Reparser(ArrayList<Lexem> lexems) throws FileNotFoundException {
+    public Reparser(ArrayList<Lexem> lexems) {
         this.lexems = lexems;
     }
 
